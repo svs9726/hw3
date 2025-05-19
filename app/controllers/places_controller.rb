@@ -9,6 +9,9 @@ class PlacesController < ApplicationController
     @place = Place.new
     #assign variables 
     @place["name"] = params["name"]
+  end
 
+  def show
+    @place = Place.find(params["id"])
   end
 end

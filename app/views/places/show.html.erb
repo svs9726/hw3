@@ -1,0 +1,9 @@
+<h1><%= @place["name"] %></h1>
+
+<ul><% for entry in @entries%>
+<li><%= entry["title"]%> <%= entry["description"] %><%= entry["created_at"]%>
+</li>
+<% end %>
+</ul>
+
+<p><a href = "/places">Back to Places</p>
