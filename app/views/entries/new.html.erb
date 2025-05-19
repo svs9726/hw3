@@ -1,6 +1,6 @@
-<h1>New Entry</h1>
+<h1>New Entry for <%= @place["name" ]%></h1>
 
-<form action = "/entries" method = "post">
+<form action = "/places/<%= @place.id %>/entries" method = "post">
   <p>
     <label for = "title">Title</label>
     <input type = "text" name="title" id="title">
@@ -10,12 +10,9 @@
     <input type = "text" name="description" id="description">
     <br>
     <br>
-    <label for = "occured_on">Occured On </label>
-    <input type = "text" name="occured_on" id="occured_on">
+    <label for = "occurred_on">Occured On </label>
+    <input type = "text" name="occurred_on" id="occured_on">
     <br>
-    <br>
-    <label for = "place">Place </label>
-    <input type = "text" name="place" id="place">
   </p>
   <button>Submit</button>
 </form>

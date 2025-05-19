@@ -1,7 +1,10 @@
 <h1><%= @place["name"] %></h1>
 
 <ul><% for entry in @entries%>
-<li><%= entry["title"]%> <%= entry["description"] %><%= entry["created_at"]%>
+<li>
+<%= entry["title"]%> <br> 
+<%= entry["description"] %> <br>
+<%= entry["occurred_on"]%>
 </li>
 <% end %>
 </ul>

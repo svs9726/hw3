@@ -1,6 +1,11 @@
 class EntriesController < ApplicationController
   def index
     @place = Place.find(params["place_id"])
+    
+    if @place.nil?
+      redirect_to "/places", alert: "Place not found." and return
+    end
+
     @entries = @place.entries
   end
 
@@ -10,6 +15,7 @@ class EntriesController < ApplicationController
   end
 
   def create
+    @place = Place.find_by("name" => params["place"])
     @entry = Entry.new
 
     #assign user-entered data
@@ -24,7 +30,7 @@ class EntriesController < ApplicationController
     @entry.save
 
     #redirect 
-    redirect_to "/places/#{@entry["place_id"]}"
+    redirect_to "/places/#{@entry["place_id"]}/entries"
   end
 
 end
